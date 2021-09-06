@@ -8,7 +8,7 @@ const MoviesList = () => {
     const [ orderBy, setOrderBy] = useState('')
     const [ results, setResults ] = useState([]) 
 
-    const movies = useSelector((state) => {
+    const { movies } = useSelector((state) => {
         return state.movie
     })
     

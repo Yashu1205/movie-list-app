@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 const MovieStats = (props) => {
-    const movies = useSelector((state) => {
+    const { movies } = useSelector((state) => {
         return state.movie
     }) 
     const [ topRanked, setTopRanked ] = useState('')
