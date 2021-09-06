@@ -11,7 +11,7 @@ const MoviesList = () => {
     const { movies } = useSelector((state) => {
         return state.movie
     })
-    
+
     useEffect(() => {
         setResults([...movies])
     }, [movies])
@@ -23,7 +23,9 @@ const MoviesList = () => {
     }
 
     const getSearchResult = (search) => {
-        const result = movies.filter(movie => movie.title.toLowerCase().includes(search.toLowerCase()))
+        const result = movies.filter(movie => {
+            return movie.title.toLowerCase().includes(search.toLowerCase())  || movie.rank.toString().includes(search)
+        })
         setResults(result)
     }
 
